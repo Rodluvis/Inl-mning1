@@ -18,14 +18,13 @@ namespace Inlämning1
                 Console.WriteLine("Enter second operator");
                 string operand2 = Console.ReadLine();
 
-
                 Console.WriteLine("Enter first term");
                 int num1 = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter second term");
                 int num2 = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter third term");
                 int num3 = Convert.ToInt32(Console.ReadLine());
-
+                int result = 0;
                 switch (operand1)
                 {
                     case "+":
@@ -43,62 +42,55 @@ namespace Inlämning1
                         break;
                 }
 
-                
-
                 switch (operand2)
                 {
                     case "+":
-                        resultList.Add(num1 + num3);
-                        Console.WriteLine(num1 + num3);
+                        result = num1 + num3;
+
+                        Console.WriteLine($"The result of your input is: {result}");
                         break;
                     case "-":
-                        resultList.Add(num1 - num3);
-                        Console.WriteLine(num1 - num3);
+                        result = num1 - num3;
+
+                        Console.WriteLine($"The result of your input is: {result}");
                         break;
                     case "*":
-                        resultList.Add(num1 * num3);
-                        Console.WriteLine(num1 * num3);
+                        result = num1 * num3;
+
+                        Console.WriteLine($"The result of your input is: {result}");
                         break;
                     case "/":
-                        resultList.Add(num1 / num3);
-                        Console.WriteLine(num1 / num3);
+                        result = num1 / num3;
+                        Console.WriteLine($"The result of your input is: {result}");
                         break;
                 }
+                resultList.Add(result);
+                if (result <100)
+                {
+                   Console.WriteLine("The sum is less then a hundred.");
+                }
 
-                Console.WriteLine("Press \"x\" to exit and to print out the sum of all previous calculations" +
-                         "\nPress any other key to continue your chain of calculations.");
+                if (result == 100)
+                {
+                    Console.WriteLine("Cool, now you have a hundred, clap clap");
+                }
+               if (result >100)
+                {
+                    Console.WriteLine("More then a hundred");
+                }
+                Console.WriteLine("Another try? " +
+                    "\nPress ENTER to continue." +
+                    "\nPress \"x\" to exit and to print out the sum of all previous calculations");
 
                 string exit = Console.ReadLine().ToLower();
                 switch (exit)
                 {
                     case "x":
-                        Console.WriteLine($"The sum of all previous calculations is {resultList.Sum()}");
+                        Console.WriteLine($"Thank you for playing. The sum of all round is: {resultList.Sum()}");
                         running = false;
                         return;
                 }
             }
-
-            /* bool running = true;
-             while (running)
-             {
-                 int[] results = new int[size];
-                 for (int i = 0; i < size; i++)
-                 {
-                     // calculation here 
-                     results[i] = resultOfCalculation;
-                 }
-                 int sum = results.Sum();
-                 Console.WriteLine("Welcome to Yulia's calculator");
-                 Console.WriteLine("Choose two operators:");
-                 string[] operators = new string[2];
-                 for (int i = 0; i < 2; i++)
-                 {
-                     operators[i] = Console.ReadLine();
-                 }
-
-                                 var intList = new List<int>();
-                 string sUserInput = "";
-                 var slist = new List<string>();*/
 
         }
     }

@@ -25,6 +25,9 @@ namespace Inlämning1
                 Console.WriteLine("Enter third term");
                 int num3 = Convert.ToInt32(Console.ReadLine());
                 int result = 0;
+                Console.WriteLine("====================");
+                Console.WriteLine($"{num1} {operand1} {num2} {operand2} {num3}");
+                Console.WriteLine("====================");
                 if (operand2 == "*" || operand2 == "/")
                 {
                     switch (operand2)
@@ -56,8 +59,6 @@ namespace Inlämning1
                             Console.WriteLine($"The result of your input is: {result}");
                             break;
                     }
-
-
                 }
                 else
                 {
@@ -89,7 +90,7 @@ namespace Inlämning1
                             result = num1 - num3;
                             Console.WriteLine($"The result of your input is: {result}");
                             break;
-                       
+
                     }
                 }
 
